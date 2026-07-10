@@ -127,6 +127,37 @@
   .chip:hover{border-color:var(--teal); transform:translateY(-1px);}
   .chip svg{width:14px;height:14px;flex-shrink:0;}
 
+  /* ---------- STATS STRIP ---------- */
+  .stats-row{
+    margin-top:32px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+    max-width:640px;
+  }
+  @media (max-width:640px){ .stats-row{grid-template-columns:1fr 1fr;} }
+  .stat-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:16px 18px;
+  }
+  .stat-card .stat-num{
+    font-family:'JetBrains Mono',monospace;
+    font-size:1.6rem;
+    font-weight:700;
+    color:var(--teal);
+    line-height:1;
+  }
+  .stat-card .stat-label{
+    margin-top:6px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    color:var(--ink-soft);
+  }
+
   /* ---------- SECTION SHELL ---------- */
   section{padding:64px 0;border-top:1px solid var(--line);}
   .eyebrow{
@@ -222,6 +253,53 @@
     background:var(--teal);
     opacity:0.6;
   }
+
+  /* ---------- PROJECT CARD ---------- */
+  .project-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:26px 28px;
+  }
+  .project-head{
+    display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:10px;
+    margin-bottom:6px;
+  }
+  .project-title{font-family:'JetBrains Mono',monospace;font-size:1.15rem;font-weight:600;}
+  .project-meta{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.78rem;
+    color:var(--ink-soft);
+    margin-bottom:16px;
+  }
+  .project-body p{color:var(--ink-soft);max-width:70ch;margin:0 0 12px;}
+  .project-highlight{
+    background:var(--teal-soft);
+    color:var(--teal);
+    font-weight:600;
+  }
+  .project-callout{
+    display:flex;flex-wrap:wrap;gap:12px;
+    margin:18px 0;
+  }
+  .callout-block{
+    flex:1 1 180px;
+    border:1px dashed var(--line);
+    border-radius:8px;
+    padding:12px 14px;
+  }
+  .callout-block .callout-label{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.7rem;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    color:var(--amber);
+    display:block;
+    margin-bottom:6px;
+  }
+  .callout-block.rec .callout-label{color:var(--teal);}
+  .callout-block p{color:var(--ink-soft);font-size:0.9rem;margin:0;}
+  .project-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
 
   /* ---------- SCHEMA / SKILLS ---------- */
   .schema{
@@ -321,15 +399,15 @@
       <div class="terminal">
         <div class="bar"><span></span><span></span><span></span></div>
         <div><span style="color:#7C8A8D;">$</span> <span id="typed-line"></span></div>
-        <div class="output" id="typed-output" style="opacity:0;">→ Barsbek Abdimital, Data Analyst</div>
+        <div class="output" id="typed-output" style="opacity:0;">→ Barsbek Abdimital, Aspiring Data Analyst</div>
       </div>
 
       <h1>Barsbek Abdimital</h1>
       <p class="role">
-        I'm a <strong>data analytics resident</strong> in NYC, and most of what I've learned so far
-        comes down to one habit: don't trust data until you've checked where it came from. That's
-        true whether I'm cleaning a spreadsheet, testing someone else's code, or locking down my
-        own home network.
+        I'm a <strong>data analytics resident</strong> in NYC, training in Excel, SQL, Python, and
+        Tableau. Everything I've done so far — testing software, securing a network, cleaning a
+        messy spreadsheet — comes back to the same habit: don't trust the data until you've checked
+        where it came from.
       </p>
 
       <div class="contact-row">
@@ -354,6 +432,21 @@
           Brooklyn, NY
         </span>
       </div>
+
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-num">3.4</div>
+          <div class="stat-label">GPA at Baruch</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">1 yr</div>
+          <div class="stat-label">SDET Apprenticeship</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">4</div>
+          <div class="stat-label">Roles in Data, Security &amp; QA</div>
+        </div>
+      </div>
     </section>
   </div>
 
@@ -365,13 +458,13 @@
       <div class="about-grid">
         <p class="about-text">
           I'm studying <strong>Computer Information Systems</strong> at Baruch College, and right now
-          I'm also in NYC's Tech Talent Pipeline residency, training in <strong>Excel, SQL, Python,
-          Tableau, and the basics of machine learning</strong>. Before this I spent a year working as a
-          <strong>software engineer in test</strong>, which is probably where I picked up the habit of
-          not trusting anything until I've checked it myself — a good QA person assumes something
-          will break quietly, so you go looking for it. That same habit is why I spent a weekend
-          last year hardening my own home network and then trying to break back into it, just to
-          see if the fix actually held.
+          I'm in NYC's Tech Talent Pipeline residency, training in <strong>Excel, SQL, Python,
+          Tableau, and the basics of machine learning</strong>. Before this residency I spent a year
+          working as a <strong>software engineer in test</strong>, which is probably where the habit
+          started: a good QA person assumes something will break quietly, so you go looking for it
+          instead of waiting for it to show up later. That's the same instinct that had me spend a
+          weekend hardening my own home network and then trying to break back into it myself, just
+          to see if the fix actually held.
         </p>
       </div>
     </div>
@@ -458,10 +551,47 @@
     <div class="wrap">
       <span class="eyebrow">// projects</span>
       <h2 class="section-title">Projects</h2>
-      <p class="section-intro">Still filling this in — a few things from the residency and my own time are on the way.</p>
-      <div class="projects-empty">
-        <span class="projects-empty-dot"></span>
-        More coming soon.
+      <p class="section-intro">A first one from the residency — more on the way.</p>
+
+      <div class="project-card">
+        <div class="project-head">
+          <span class="project-title">What Drives Average Weekly Sales?</span>
+        </div>
+        <div class="project-meta">Collaborative Project · Tech Talent Pipeline Residency · Tableau</div>
+        <div class="project-body">
+          <p>
+            Collaborated with classmates to build a multi-view Tableau dashboard using the Walmart
+            weekly sales dataset, testing which factors actually move retail sales — temperature,
+            fuel price, CPI, unemployment rate, and the store itself. Each view lines up one
+            variable against average weekly sales, plus a store performance matrix ranking every
+            location from top performer to average.
+          </p>
+          <p>
+            The answer surprised us: <span class="project-highlight">store selection mattered far
+            more than weather or the economy</span>. The top-performing store did roughly
+            <strong>5x</strong> the average weekly sales of the bottom ones, while unemployment and
+            fuel price barely moved the needle at all.
+          </p>
+        </div>
+        <div class="project-callout">
+          <div class="callout-block">
+            <span class="callout-label">Limitations</span>
+            <p>No store locations, product categories, or customer demographics in the dataset — so we couldn't say <em>why</em> some stores outperform, only that they do.</p>
+          </div>
+          <div class="callout-block rec">
+            <span class="callout-label">What we'd try next</span>
+            <p>Layer in store location and product category data to explain the gap, and test dynamic pricing on temperature-sensitive product lines.</p>
+          </div>
+        </div>
+        <div class="project-tags">
+          <span class="tag">Tableau</span>
+          <span class="tag">Dashboard Development</span>
+          <span class="tag">Statistical Analysis</span>
+          <span class="tag">Data Cleaning</span>
+        </div>
+        <div style="margin-top:16px;">
+          <a href="TableauDashboard.pdf" target="_blank" rel="noopener" class="mono" style="color:var(--teal); text-decoration:underline; font-size:0.85rem;">View dashboard (PDF) →</a>
+        </div>
       </div>
     </div>
   </section>
@@ -556,7 +686,7 @@
 </footer>
 
 <script>
-  const line = "SELECT role FROM barsbek WHERE status = 'open_to_work';";
+  const line = "SELECT title FROM barsbek WHERE status = 'open_to_work';";
   const el = document.getElementById('typed-line');
   const out = document.getElementById('typed-output');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
