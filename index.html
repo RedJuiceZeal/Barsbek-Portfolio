@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Barsbek Abdimital — Data Analytics</title>
+<title>Barsbek Abdimital: Data Analytics</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -95,10 +95,37 @@
   @keyframes blink{50%{opacity:0;}}
   .terminal .output{color:var(--code-accent);margin-top:8px;}
 
-  .hero h1{
-    font-size:clamp(2.1rem, 4.5vw, 3.1rem);
+  /* ---------- AVATAR / IDENTITY ---------- */
+  .identity-row{
+    display:flex;
+    align-items:center;
+    gap:24px;
     margin-top:28px;
-    line-height:1.15;
+  }
+  .avatar{
+    width:96px;height:96px;
+    flex-shrink:0;
+    border-radius:50%;
+    background:var(--teal);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'JetBrains Mono',monospace;
+    font-weight:700;
+    font-size:1.6rem;
+    color:#fff;
+    box-shadow:0 10px 24px -10px rgba(20,104,98,0.55);
+  }
+  .tagline{
+    margin-top:8px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.95rem;
+    color:var(--teal);
+  }
+  .tagline .sep{color:var(--ink-soft);margin:0 8px;}
+
+  .hero h1{
+    font-size:clamp(2.6rem, 6vw, 4rem);
+    line-height:1.05;
+    margin:0;
   }
   .hero .role{
     margin-top:10px;
@@ -108,8 +135,38 @@
   }
   .hero .role strong{color:var(--ink);font-weight:600;}
 
-  .contact-row{
+  /* ---------- CTA BUTTONS ---------- */
+  .cta-row{
     margin-top:28px;
+    display:flex;flex-wrap:wrap;gap:12px;
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 22px;
+    border-radius:8px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.88rem;
+    font-weight:600;
+    text-decoration:none;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn svg{width:15px;height:15px;flex-shrink:0;}
+  .btn:hover{transform:translateY(-1px);}
+  .btn-primary{
+    background:var(--teal);
+    color:#fff;
+    box-shadow:0 8px 18px -8px rgba(20,104,98,0.55);
+  }
+  .btn-secondary{
+    background:#fff;
+    color:var(--ink);
+    border:1px solid var(--line);
+  }
+  .btn-secondary:hover{border-color:var(--teal);}
+
+  /* ---------- CONTACT CHIPS ---------- */
+  .contact-row{
+    margin-top:16px;
     display:flex;flex-wrap:wrap;gap:10px;
   }
   .chip{
@@ -402,26 +459,36 @@
         <div class="output" id="typed-output" style="opacity:0;">→ Barsbek Abdimital, Aspiring Data Analyst</div>
       </div>
 
-      <h1>Barsbek Abdimital</h1>
+      <div class="identity-row">
+        <div class="avatar">BA</div>
+        <div>
+          <h1>Barsbek Abdimital</h1>
+          <div class="tagline">Data Analytics Resident<span class="sep">|</span>Excel · SQL · Python · Tableau</div>
+        </div>
+      </div>
+
       <p class="role">
         I'm a <strong>data analytics resident</strong> in NYC, training in Excel, SQL, Python, and
-        Tableau. Everything I've done so far — testing software, securing a network, cleaning a
-        messy spreadsheet — comes back to the same habit: don't trust the data until you've checked
+        Tableau. Everything I've done so far, testing software, securing a network, cleaning a
+        messy spreadsheet, comes back to the same habit: don't trust the data until you've checked
         where it came from.
       </p>
 
-      <div class="contact-row">
-        <a class="chip" href="mailto:barsbek235@gmail.com">
+      <div class="cta-row">
+        <a class="btn btn-primary" href="mailto:barsbek235@gmail.com">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18v12H3z"/><path d="M3 6l9 7 9-7"/></svg>
-          barsbek235@gmail.com
+          Email Me
         </a>
+        <a class="btn btn-secondary" href="https://linkedin.com/in/barsbek-abdimital" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9h4v2c1-1.5 2.5-2.3 4.5-2.3 3 0 5.5 2 5.5 6.3V21h-4v-5.6c0-2-1-3.2-2.7-3.2-1.5 0-2.8 1-3.3 2.3-.2.4-.2.9-.2 1.4V21h-4z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+
+      <div class="contact-row">
         <a class="chip" href="tel:+13479309106">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8.1 9.6a16 16 0 0 0 6 6l1.1-1.2a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z"/></svg>
           347-930-9106
-        </a>
-        <a class="chip" href="https://linkedin.com/in/barsbek-abdimital" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9h4v2c1-1.5 2.5-2.3 4.5-2.3 3 0 5.5 2 5.5 6.3V21h-4v-5.6c0-2-1-3.2-2.7-3.2-1.5 0-2.8 1-3.3 2.3-.2.4-.2.9-.2 1.4V21h-4z"/></svg>
-          linkedin
         </a>
         <a class="chip" href="https://github.com/RedJuiceZeal" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.7 2.8 5.6 3.1 5.6 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.2 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
@@ -440,7 +507,7 @@
         </div>
         <div class="stat-card">
           <div class="stat-num">1 yr</div>
-          <div class="stat-label">SDET Apprenticeship</div>
+          <div class="stat-label">SDET Bootcamp</div>
         </div>
         <div class="stat-card">
           <div class="stat-num">4</div>
@@ -459,12 +526,13 @@
         <p class="about-text">
           I'm studying <strong>Computer Information Systems</strong> at Baruch College, and right now
           I'm in NYC's Tech Talent Pipeline residency, training in <strong>Excel, SQL, Python,
-          Tableau, and the basics of machine learning</strong>. Before this residency I spent a year
-          working as a <strong>software engineer in test</strong>, which is probably where the habit
-          started: a good QA person assumes something will break quietly, so you go looking for it
-          instead of waiting for it to show up later. That's the same instinct that had me spend a
-          weekend hardening my own home network and then trying to break back into it myself, just
-          to see if the fix actually held.
+          Tableau, and the basics of machine learning</strong>. Before this residency I went through
+          an <strong>SDET bootcamp</strong>, training under real software engineers in test rather
+          than working solo, which is probably where the habit started: a good QA person assumes
+          something will break quietly, so you go looking for it instead of waiting for it to show
+          up later. That's the same instinct that had me spend a weekend hardening my own home
+          network and then trying to break back into it myself, just to see if the fix actually
+          held.
         </p>
       </div>
     </div>
@@ -492,7 +560,7 @@
           <div class="stage-meta">June 2026 – Present · New York, NY · Hybrid</div>
           <ul>
             <li>Got into one of NYC's most competitive tech residencies, training alongside people already working in data analytics.</li>
-            <li>Practiced the full workflow end to end — pulling in raw data, cleaning it up, analyzing it, and building it out into something visual — using Excel, SQL, Python, Tableau, and some machine learning fundamentals.</li>
+            <li>Practiced the full workflow end to end: pulling in raw data, cleaning it up, analyzing it, and building it out into something visual, using Excel, SQL, Python, Tableau, and some machine learning fundamentals.</li>
             <li>Presented findings to a professional audience, which forced me to get better at explaining the "so what," not just the numbers.</li>
           </ul>
         </div>
@@ -506,7 +574,7 @@
           <div class="stage-org">Independent Project · Self-Employed</div>
           <div class="stage-meta">June 2025 · New York, NY</div>
           <ul>
-            <li>Locked down my own home network — switched on WPA3, killed the default credentials, and tightened device access so there weren't any easy ways in.</li>
+            <li>Locked down my own home network: switched on WPA3, killed the default credentials, and tightened device access so there weren't any easy ways in.</li>
             <li>Ran my own threat-detection tests (DNS leak checks, IP scanning, network mapping) to see what I'd missed, then fixed it.</li>
             <li>Wrote everything up and put it on GitHub, partly for accountability and partly so I could point to it later.</li>
           </ul>
@@ -518,12 +586,12 @@
             <span class="stage-tag">validate</span>
             <span class="stage-title">Software Engineer in Test</span>
           </div>
-          <div class="stage-org">WeDevX · Apprenticeship</div>
+          <div class="stage-org">WeDevX · Bootcamp</div>
           <div class="stage-meta">Sep 2023 – Aug 2024 · Remote</div>
           <ul>
-            <li>Spent a year in an SDET apprenticeship and came out the other side with a Software Development Engineer in Test certificate.</li>
+            <li>Went through an intensive SDET bootcamp and came out the other side with a Software Development Engineer in Test certificate.</li>
             <li>Got hands-on with Java, Selenium, SQL, Jenkins, Git, Cucumber, and JUnit on real project work, not just tutorials.</li>
-            <li>Worked remotely on a distributed team and learned what the software lifecycle actually looks like from the inside — design, build, test, ship.</li>
+            <li>Worked remotely on a distributed team and learned what the software lifecycle actually looks like from the inside: design, build, test, ship.</li>
           </ul>
         </div>
 
@@ -536,7 +604,7 @@
           <div class="stage-org">ClimateSavvy Solutions</div>
           <div class="stage-meta">Jun 2023 – Aug 2023 · New York, NY · Hybrid</div>
           <ul>
-            <li>Built the company's contact database from scratch in Excel — digitized a few hundred business cards into something people could actually search.</li>
+            <li>Built the company's contact database from scratch in Excel: digitized a few hundred business cards into something people could actually search.</li>
             <li>Set up Calendly for leadership so scheduling stopped being a back-and-forth email chain.</li>
             <li>Dug into sustainability program data to find trends and gaps, so deliverables stayed on target for clients.</li>
           </ul>
@@ -551,7 +619,7 @@
     <div class="wrap">
       <span class="eyebrow">// projects</span>
       <h2 class="section-title">Projects</h2>
-      <p class="section-intro">A first one from the residency — more on the way.</p>
+      <p class="section-intro">A first one from the residency, more on the way.</p>
 
       <div class="project-card">
         <div class="project-head">
@@ -561,7 +629,7 @@
         <div class="project-body">
           <p>
             Collaborated with classmates to build a multi-view Tableau dashboard using the Walmart
-            weekly sales dataset, testing which factors actually move retail sales — temperature,
+            weekly sales dataset, testing which factors actually move retail sales: temperature,
             fuel price, CPI, unemployment rate, and the store itself. Each view lines up one
             variable against average weekly sales, plus a store performance matrix ranking every
             location from top performer to average.
@@ -576,7 +644,7 @@
         <div class="project-callout">
           <div class="callout-block">
             <span class="callout-label">Limitations</span>
-            <p>No store locations, product categories, or customer demographics in the dataset — so we couldn't say <em>why</em> some stores outperform, only that they do.</p>
+            <p>No store locations, product categories, or customer demographics in the dataset, so we couldn't say <em>why</em> some stores outperform, only that they do.</p>
           </div>
           <div class="callout-block rec">
             <span class="callout-label">What we'd try next</span>
@@ -655,7 +723,7 @@
       <h2 class="section-title">Education</h2>
       <div class="edu-card">
         <div>
-          <h3>Bachelor of Business Administration — Computer Information Systems</h3>
+          <h3>Bachelor of Business Administration: Computer Information Systems</h3>
           <div class="school">Baruch College, CUNY · New York, NY</div>
         </div>
         <div class="edu-meta">
@@ -671,7 +739,7 @@
 <footer id="contact">
   <div class="wrap">
     <div class="foot-head mono">Get in touch</div>
-    <p>I'm looking for data analytics roles and internships in NYC. Email's the fastest way to reach me — I check it every day.</p>
+    <p>I'm looking for data analytics roles and internships in NYC. Email's the fastest way to reach me, I check it every day.</p>
     <div class="contact-row">
       <a class="chip" href="mailto:barsbek235@gmail.com">barsbek235@gmail.com</a>
       <a class="chip" href="tel:+13479309106">347-930-9106</a>
